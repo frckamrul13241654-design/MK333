@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>গেমিং পোর্টাল - ইউজার প্যানেল</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #0f172a;
+            color: #ffffff;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .card {
+            background-color: #1e293b;
+            border: 1px solid #334155;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        .card h2 {
+            font-size: 18px;
+            margin-bottom: 15px;
+            color: #38bdf8;
+            border-bottom: 2px solid #334155;
+            padding-bottom: 8px;
+        }
+
+        .form-group {
+            margin-bottom: 12px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 13px;
+            margin-bottom: 5px;
+            color: #94a3b8;
+        }
+
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 10px;
+            background-color: #0f172a;
+            border: 1px solid #475569;
+            color: white;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+
+        .btn {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            font-weight: bold;
+            cursor: pointer;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        .btn-primary {
+            background-color: #0284c7;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: #0369a1;
+        }
+
+        .btn-success {
+            background-color: #16a34a;
+            color: white;
+        }
+
+        .btn-success:hover {
+            background-color: #15803d;
+        }
+
+        /* গেম সেকশন গ্রিড */
+        .games-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+        }
+
+        .game-item {
+            background-color: #0f172a;
+            padding: 15px;
+            text-align: center;
+            border-radius: 6px;
+            border: 1px solid #334155;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .game-item:hover {
+            border-color: #38bdf8;
+            background-color: #1e293b;
+        }
+
+        .game-item h4 {
+            font-size: 15px;
+            color: #f8fafc;
+        }
+
+        .game-item p {
+            font-size: 12px;
+            color: #94a3b8;
+            margin-top: 4px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+
+        <!-- ১. লগইন পেজ সেকশন -->
+        <div class="card">
+            <h2>লগইন করুন</h2>
+            <div class="form-group">
+                <label>ইউজারনেম বা ফোন নম্বর</label>
+                <input type="text" placeholder="আপনার নম্বর দিন">
+            </div>
+            <div class="form-group">
+                <label>পাসওয়ার্ড</label>
+                <input type="password" placeholder="পাসওয়ার্ড দিন">
+            </div>
+            <button class="btn btn-primary" onclick="alert('লগইন সফল হয়েছে!')">লগইন</button>
+        </div>
+
+        <!-- ২. রেজিস্ট্রেশন পেজ সেকশন -->
+        <div class="card">
+            <h2>নতুন অ্যাকাউন্ট রেজিস্টার করুন</h2>
+            <div class="form-group">
+                <label>পূর্ণ নাম</label>
+                <input type="text" placeholder="আপনার নাম লিখুন">
+            </div>
+            <div class="form-group">
+                <label>ফোন নম্বর</label>
+                <input type="text" placeholder="01XXXXXXXXX">
+            </div>
+            <div class="form-group">
+                <label>নতুন পাসওয়ার্ড</label>
+                <input type="password" placeholder="শক্তিশালী পাসওয়ার্ড দিন">
+            </div>
+            <button class="btn btn-success" onclick="alert('রেজিস্ট্রেশন সফল হয়েছে!')">রেজিস্ট্রার</button>
+        </div>
+
+        <!-- ৩. ডিপোজিট ও উইথড্র পেজ সেকশন -->
+        <div class="card">
+            <h2>ডিপোজিট ও উইথড্র</h2>
+            <div class="form-group">
+                <label>লেনদেনের মাধ্যম</label>
+                <select>
+                    <option>বিকাশ (Bkash)</option>
+                    <option>নগদ (Nagad)</option>
+                    <option>রকেট (Rocket)</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>পরিমাণ (টাকা)</label>
+                <input type="number" placeholder="টাকার পরিমাণ লিখুন">
+            </div>
+            <div style="display: flex; gap: 10px;">
+                <button class="btn btn-success" onclick="alert('ডিপোজিট রিকোয়েস্ট সাবমিট হয়েছে!')">ডিপোজিট</button>
+                <button class="btn btn-primary" style="background-color: #e11d48;" onclick="alert('উইথড্র রিকোয়েস্ট সাবমিট হয়েছে!')">উইথড্র</button>
+            </div>
+        </div>
+
+        <!-- ৪. লর্ড গেম ও জনপ্রিয় গেম ক্যাটাগরি -->
+        <div class="card">
+            <h2>জনপ্রিয় ও লর্ড গেমস</h2>
+            <div class="games-grid">
+                <div class="game-item" onclick="alert('লর্ড গেম লোড হচ্ছে...')">
+                    <h4>লর্ড গেম (Lord Game)</h4>
+                    <p>সেরা ট্রেন্ডিং</p>
+                </div>
+                <div class="game-item" onclick="alert('লাইভ ক্যাসিনো লোড হচ্ছে...')">
+                    <h4>লাইভ ক্যাসিনো</h4>
+                    <p>রিয়েল টাইম</p>
+                </div>
+                <div class="game-item" onclick="alert('স্লট গেম লোড হচ্ছে...')">
+                    <h4>স্লট মেশিন</h4>
+                    <p>স্পিন অ্যান্ড উইন</p>
+                </div>
+                <div class="game-item" onclick="alert('কার্ড গেম লোড হচ্ছে...')">
+                    <h4>কার্ড গেম</h4>
+                    <p>ক্লাসিক মোড</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>
+ <!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ইউজার ড্যাশবোর্ড - গেমিং পোর্টাল</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #0f172a;
+            color: #ffffff;
+            padding: 15px;
+        }
+
+        .dashboard-container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* ইউজার প্রোফাইল ও ব্যালেন্স হেডার */
+        .user-header {
+            background: linear-gradient(135deg, #1e293b, #334155);
+            padding: 20px;
+            border-radius: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border: 1px solid #475569;
+            margin-bottom: 25px;
+        }
+
+        .user-info h3 {
+            font-size: 16px;
+            color: #38bdf8;
+            margin-bottom: 5px;
+        }
+
+        .user-info p {
+            font-size: 13px;
+            color: #94a3b8;
+        }
+
+        .balance-box {
+            text-align: right;
+        }
+
+        .balance-box span {
+            font-size: 12px;
+            color: #94a3b8;
+            display: block;
+        }
+
+        .balance-box h2 {
+            font-size: 20px;
+            color: #4ade80;
+        }
+
+        /* সেকশন টাইটেল */
+        .section-title {
+            font-size: 18px;
+            margin-bottom: 15px;
+            color: #f8fafc;
+            border-left: 4px solid #38bdf8;
+            padding-left: 8px;
+        }
+
+        /* গেম গ্রিড (সলিড গেম ও অন্যান্য) */
+        .games-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+            margin-bottom: 25px;
+        }
+
+        .game-card {
+            background-color: #1e293b;
+            border: 1px solid #334155;
+            padding: 18px;
+            border-radius: 8px;
+            text-align: center;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .game-card:hover {
+            border-color: #38bdf8;
+            transform: translateY(-3px);
+            background-color: #273548;
+        }
+
+        .game-card h4 {
+            font-size: 16px;
+            color: #f8fafc;
+            margin-bottom: 6px;
+        }
+
+        .game-card p {
+            font-size: 12px;
+            color: #38bdf8;
+        }
+
+        /* কুইক অ্যাকশন বাটন */
+        .action-buttons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .btn {
+            flex: 1;
+            padding: 12px;
+            border: none;
+            border-radius: 6px;
+            font-weight: bold;
+            cursor: pointer;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        .btn-deposit {
+            background-color: #16a34a;
+            color: white;
+        }
+
+        .btn-deposit:hover {
+            background-color: #15803d;
+        }
+
+        .btn-withdraw {
+            background-color: #e11d48;
+            color: white;
+        }
+
+        .btn-withdraw:hover {
+            background-color: #be123c;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="dashboard-container">
+
+        <!-- ইউজার স্ট্যাটাস ও ব্যালেন্স -->
+        <div class="user-header">
+            <div class="user-info">
+                <h3>স্বাগতম, হাবিবুর রহমান</h3>
+                <p>আইডি: #FCR7283</p>
+            </div>
+            <div class="balance-box">
+                <span>মূল ব্যালেন্স</span>
+                <h2>৳ ০.০০</h2>
+            </div>
+        </div>
+
+        <!-- গেমস সেকশন (সলিড গেম ও অন্যান্য ক্যাটাগরি) -->
+        <div class="section-title">সলিড ও জনপ্রিয় গেমস</div>
+        <div class="games-grid">
+            <div class="game-card" onclick="alert('লর্ড গেম (Lord Game) শুরু হচ্ছে...')">
+                <h4>লর্ড গেম</h4>
+                <p>ট্রেন্ডিং ও সলিড</p>
+            </div>
+            <div class="game-card" onclick="alert('স্লট স্পিন গেম লোড হচ্ছে...')">
+                <h4>স্লট মেশিন</h4>
+                <p>হাই উইনিং চান্স</p>
+            </div>
+            <div class="game-card" onclick="alert('লাইভ ক্যাসিনো টেবিল ওপেন হচ্ছে...')">
+                <h4>লাইভ ক্যাসিনো</h4>
+                <p>রিয়েল টাইম প্লে</p>
+            </div>
+            <div class="game-card" onclick="alert('কার্ড গেম শুরু হচ্ছে...')">
+                <h4>কার্ড গেম</h4>
+                <p>ক্লাসিক মোড</p>
+            </div>
+            <div class="game-card" onclick="alert('ফিশিং গেম লোড হচ্ছে...')">
+                <h4>ফিশিং গেম</h4>
+                <p>অ্যাকশন প্যাকড</p>
+            </div>
+            <div class="game-card" onclick="alert('রুলেট গেম শুরু হচ্ছে...')">
+                <h4>রুলেট হুইল</h4>
+                <p>লাকি স্পিন</p>
+            </div>
+        </div>
+
+        <!-- ডিপোজিট ও উইথড্র অপশন -->
+        <div class="section-title">অ্যাকাউন্ট ম্যানেজমেন্ট</div>
+        <div class="action-buttons">
+            <button class="btn btn-deposit" onclick="alert('ডিপোজিট পেজে যাওয়া হচ্ছে...')">ডিপোজিট করুন</button>
+            <button class="btn btn-withdraw" onclick="alert('উইথড্র পেজে যাওয়া হচ্ছে...')">উইথড্র করুন</button>
+        </div>
+
+    </div>
+
+</body>
+</html>
